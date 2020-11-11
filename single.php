@@ -5,6 +5,7 @@ while(have_posts()){
 
 the_post(); ?>
 
+
 <div class="container">
  <div class="row">
   <div class="col-md-12">

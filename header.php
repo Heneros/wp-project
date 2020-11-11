@@ -14,28 +14,24 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
+            <?php
 
+            wp_nav_menu([
+              'menu' => 'menu-header',
+              'container' => false,
+              'menu_class' => 'navbar-nav ml-auto',
+              'echo' => true,
+              // 'fallback_cb' => 'wp_page_menu',
+              'items_wrap' => '<ul class="navbar-nav ml-auto">%3$s</ul>',
+              'depth' => 1,
+              'add_li_class' => 'nav-item'
+
+            ]);
+
+ 
+            ?>
           <ul class="navbar-nav ml-auto">
 
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('/') ?>">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li> 
-
-              <li <?php if(is_page('our-products') or wp_get_post_parent_id(0) == 10 ) echo 'class="nav-item active"'?>>
-                <a class="nav-link" href="<?php echo site_url('/our-products'); ?>">
-                Our Products
-                <span class="sr-only">(current)</span>
-              </a>
-                
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">Contact Us</a>
-              </li>
             </ul> 
           </div>
         </div>
